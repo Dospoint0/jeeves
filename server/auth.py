@@ -51,7 +51,7 @@ def setup_auth_routes(app):
         flow = create_flow(redirect_uri=url_for('oauth2callback', _external=True))
         authorization_url, state = flow.authorization_url(
             access_type='offline',
-            include_granted_scopes='true'
+            include_granted_scopes='true',
             prompt='consent'
         )
         # Store state in session
